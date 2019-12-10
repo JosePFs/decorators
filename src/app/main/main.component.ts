@@ -16,7 +16,7 @@ export class MainComponent implements OnInit {
   }
 
   @MainLogger.log('arg one', 'arg two')
-  onClick(event: Event) {
+  onClick(event: Event, arg: string) {
     this.observable$.subscribe((data => {
       console.log(data);
     }));
