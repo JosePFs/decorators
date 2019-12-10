@@ -8,6 +8,7 @@ import { from, Observable } from 'rxjs';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
+  observable$ = from([1, 2, 3]);
 
   constructor() { }
 
@@ -15,14 +16,10 @@ export class MainComponent implements OnInit {
   }
 
   @MainLogger.log('arg one', 'arg two')
-  onClick(event: Event): Observable<number> {
-    const obs = from([1, 2, 3]);
-
-    obs.subscribe((data => {
+  onClick(event: Event) {
+    this.observable$.subscribe((data => {
       console.log(data);
     }));
-
-    return obs;
   }
 
 }
