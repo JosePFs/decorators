@@ -8,7 +8,7 @@ import { from, Observable } from 'rxjs';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-  observable$ = from([1, 2, 3]);
+  private observable$: Observable<number> = from([1, 2, 3]);
 
   constructor() { }
 
